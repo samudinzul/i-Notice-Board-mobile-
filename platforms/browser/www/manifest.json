@@ -1,0 +1,11 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "i notice board",
+  "short_name": "i notice board",
+  "version": "com.myapp.i.notice.board",
+  "description": "A sample Apache Cordova application that responds to the\n\t\tdeviceready\n\t\tevent.",
+  "author": "Eclipse.org - Thym",
+  "icons": [],
+  "start_url": "index.html"
+}

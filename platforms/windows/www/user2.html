@@ -1,0 +1,681 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+    	<link rel="stylesheet" href="http://code.ionicframework.com/1.0.0/css/ionic.css" />
+    	<script src="http://code.ionicframework.com/1.0.0/js/ionic.bundle.js"></script>
+    	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    	<script src="http://code.jquery.com/jquery-2.0.1.min.js"></script>
+    	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+ <!--   <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">-->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <script type="text/javascript" src="cordova.js"></script>
+      	<link href="jquerymobile/jquery.mobile-1.4.5.css" rel="stylesheet" type="text/css"/>
+      	<script type="text/javascript" src="jquerymobile/demos/js/jquery.js"></script>
+      	<script type="text/javascript" src="jquerymobile/demos/js/jquery.mobile.1.4.5.js"></script>
+      	<script type="text/javascript" src="js/index.js"></script>
+        <title>Hello World</title>
+    </head>
+    
+   <!--  <style>
+  .ui-page { background: gray;}
+  .ui-header { background: blue;}
+  .ui-content { background: black;}
+  
+</style>-->
+    
+ <body>
+    
+ <!--    
+     sign in 
+<div data-role="page" id="signin">
+   <div data-role="header">
+ </div>
+   <div class="container">
+       <form id="login">
+       Name: 
+         <input type="text" name ="uname" id="uname"/>
+       Password:
+         <input type="password" name="pwd" id="pwd"/ >
+	     <input type ="submit" value="login" id="btn-login"/>
+	   </form>
+       
+      
+  </div>
+</div> -->
+    
+    
+    <!-- home -->
+		<div data-role="page" id="home" >
+			<div data-role="header">
+			<a href="#option" data-role="button"  data-icon="bars">OPTION</a> 
+				<a href="#logout" class="ui-btn ui-icon-home ui-btn-icon-left" >LOG OUT</a>
+				<h1>IIUM (ADMIN)</h1>
+			</div>
+			<div data-role="content">
+				<div class="ui-body ui-body-a ui-corner-all">
+			<p style="text-align:center;"><img id="logo" alt="" src="img/logo.png" style="width:200px;height:200px;"/></p>
+		
+			<h2> <p style="text-align:center;"> I-NOTICE BOARD </p> </h2>
+		
+			<div data-role="tabs" id="tabs-1">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#tab-1a" data-ajax="false" ><img id="image-1" alt="" src="img/alumni.png" width="35" height="40"/></a></li>
+						<li><a href="#tab-1b" data-ajax="false"><img id="image-2" alt="" src="img/announcement.png" width="35" height="40"/></a></li>
+						<li><a href="#tab-1c" data-ajax="false"><img id="image-3" alt="" src="img/lossandfound.png" width="35" height="40"/></a></li>
+						<li><a href="#tab-1d" data-ajax="false"><img id="image-4" alt="" src="img/events.png" width="35" height="40"/></a></li>
+						<li><a href="#tab-1e" data-ajax="false"><img id="image-5" alt="" src="img/service.png" width="35" height="40"/></a></li>
+					</ul>
+				</div>
+				
+				
+				<!--Page alumni-->
+				<div id="tab-1a" class="ui-body-d ui-content">
+					<h4><p style="text-align:center;">ALUMNI</p></h4>
+				<!-- <ol data-role="listview" id="liststudentalumni" data-theme="a" ></ol>-->
+			<ul data-role="listview" id="liststudentalumni" data-filter="true" data-filter-placeholder="Search Post..." data-inset="true">
+   
+</ul>
+				</div>
+				
+				
+				
+				<!--Page annoucement-->
+				<div id="tab-1b" class="ui-body-d ui-content">
+					<h4><p style="text-align:center;">ANNOUCEMENT</p></h4>
+			<!-- 	<ol data-role="listview" id="liststudentannoucement" data-theme="a"></ol> -->
+				<ul data-role="listview" id="liststudentannoucement" data-filter="true" data-filter-placeholder="Search Post..." data-inset="true"></ul>
+				</div>
+				
+				
+				
+				
+				
+				<!--Page lossfound-->
+				<div id="tab-1c" class="ui-body-d ui-content">
+					<h4><p style="text-align:center;">LOSS AND FOUND</p></h4>
+					<!--   <ol data-role="listview" id="liststudentlossandfound" data-theme="a"></ol>-->
+				<ul data-role="listview" id="liststudentlossandfound" data-filter="true" data-filter-placeholder="Search Post..." data-inset="true"></ul>
+				</div>
+				
+				
+				
+				
+				<!--Page event-->
+				<div id="tab-1d" class="ui-body-d ui-content">
+					<h4><p style="text-align:center;">EVENT</p></h4>
+					<!--   <ol data-role="listview" id="liststudentevents" data-theme="a"></ol>--> 
+					<ul data-role="listview" id="liststudentevents" data-filter="true" data-filter-placeholder="Search Post..." data-inset="true"></ul>
+				</div>
+				
+				
+				
+				
+				<!--Page service-->
+				<div id="tab-1e" class="ui-body-d ui-content">
+					<h4><p style="text-align:center;">SERVICE</p></h4>
+					<!-- <ol data-role="listview" id="liststudentservices" data-theme="a"></ol> -->
+					<ul data-role="listview" id="liststudentservices" data-filter="true" data-filter-placeholder="Search Post..." data-inset="true"></ul>
+				</div>
+		
+		
+		
+		
+		
+		
+		</div>
+		
+		
+		
+		
+		</div>
+			</div>
+		</div>
+		
+		<!--login 
+				<div data-role="page" id="login" data-theme="a">
+			<div data-role="header" data-theme="b">
+				<h1>LOGIN</h1>
+			</div>
+			<div data-role="content">
+			
+			<p style="text-align:center;"><img id="logo" alt="" src="img/login.jpg" style="width:200px;height:200px;"/></p>
+					<h4> <p style="text-align:center;"> I-NOTICE BOARD </p> </h4>
+						
+				
+				<form id="login">
+		     <input type="text" data-clear-btn="true" data-mini="true" name="matricno" id="matricno" value="" placeholder="Name:" >	
+		     <input type="password" data-clear-btn="true" data-mini="true" name="password" id="password" value="" placeholder="Matric No:" >	
+		   <!--  <button onclick="myFunctionlogin()">LOGIN</button>-
+			   <a href="#page-postalumni" id="button-9" class="ui-btn ui-corner-all">LOGIN</a>
+			   <a href="#home" class="ui-btn ui-icon-home " >Back</a>
+		     </form>
+			</div>
+		</div>
+-->
+		
+		<!--alumni-->
+		<div data-role="page" id="page-postalumni">
+			<div data-role="header">
+				<a href="#page-2" data-role="button" data-rel="back" data-icon="back">Back</a>
+				<h1>POST</h1>
+			</div>
+			<div data-role="content">
+				<div role="main" class="ui-content">
+         		<div class="ui-field-contain" align="center">
+         			<form id="anewrecordalumni">
+
+						
+						
+						<label >WRITE THE TITLE OF YOUR POST:</label>
+						<!--  <input type="text" data-clear-btn="true" data-mini="true" name="id_number" id="id_number" value="" placeholder="id_number: "> -->
+						<input type="text" data-clear-btn="true" data-mini="true" name="heading" id="heading" value="" placeholder="title: " required>
+						<label >ENTER THE DATE:</label>
+						<input type="date" data-clear-btn="true" data-mini="true" name="datetime" id="datetime" value="" placeholder="yyyy/dd/mm: " required>
+						
+						<!--  <input type="text" data-clear-btn="true" data-mini="true" name="description" id="description" value="" placeholder="description: "> -->
+						
+						<label for="textarea">ENTER THE DESCRIPTION:</label>
+						<textarea cols="40" rows="10" name="post_detail" id="post_detail" placeholder="description: " required></textarea>
+						
+						<label >CHOOSE THE CATEGORY:</label>
+						<select name="topic_id" id="topic_id" data-mini="true" >
+							<option value="5">ALUMNI AND DISCUSSION</option>
+							<option value="1">ANNOUNCEMENT</option>
+							<option value="4">LOSS AND FOUND</option>
+							<option value="2">EVENT</option>
+							<option value="3">SERVICE</option>
+						</select>
+						
+						<div class="ui-grid-a">
+							<div class="ui-block-a"><input type="reset" id="cancel" data-mini="true" value="Cancel" style="color:white;background-color:black;"></div>
+							<div class="ui-block-b"><input type="submit" id="submit" data-mini="true" value="Submit" style="color:white;background-color:black;"></div>
+						</div>		
+         			
+         			</form>    
+       			</div>
+       		</div>
+			</div>
+		</div>
+		
+
+<!-- Student Details page studentdetailsalumni  studentInfo -->
+       <div data-role="page" id="detailsalumni" data-theme="a">
+        	<div data-role="header" data-theme="a">
+        	   	<a href="#home" class="ui-btn ui-icon-back ui-btn-icon-left" >Back</a>
+        	   		<h1>POST DETAILS</h1>
+        	</div>
+        	
+         	<div role="main" class="ui-content" data-theme="a">
+         		<div class="ui-field-contain" align="center">
+         		
+         		<form id="delete1">
+         		<ul data-role="listview" data-inset="true">
+         			<div id="studentdetailsalumni" ></div>
+  
+					</ul>	
+						<input type="hidden" id="studentInfo" name="studentInfo" value="">
+						<button onclick="delete1()"style="color:white;background-color:red;">Delete</button>
+						<br>
+						<br>
+						
+         			</form>
+       			</div>
+       		</div>
+       		</div>
+
+    	
+    	
+    	<!-- Student Details page -->
+       <div data-role="page" id="detailsannoucement">
+        	<div data-role="header">
+        	   	<a href="#home" class="ui-btn ui-icon-back ui-btn-icon-left" >Back</a>
+        	   		<h1>Student Details</h1>
+        	</div>
+        	
+         	<div role="main" class="ui-content">
+         		<div class="ui-field-contain" align="center">
+         			<form id="delete2">
+						<div id="studentdetailsannoucement" ></div>
+						<input type="hidden" id="studentInfoannoucement" name="studentInfoannoucement" value="">
+						<button onclick="delete2()"style="color:white;background-color:red;">Delete</button>
+						<br>
+						<br>
+						</form>
+         			
+       			</div>
+       		</div>
+
+    	</div> 
+    	<!-- Student Details page -->
+       <div data-role="page" id="detailsevent">
+        	<div data-role="header">
+        	   	<a href="#home" class="ui-btn ui-icon-back ui-btn-icon-left" >Back</a>
+        	   		<h1> Details</h1>
+        	</div>
+        	
+         	<div role="main" class="ui-content">
+         		<div class="ui-field-contain" align="center">
+         			<form id="delete3">
+						<div id="studentdetailsevent" ></div>
+						<input type="hidden" id="studentInfoevent" name="studentInfoevent" value="">
+						<button onclick="delete3()"style="color:white;background-color:red;">Delete</button>
+						<br>
+						<br>
+						
+         			</form>
+       			</div>
+       		</div>
+
+    	</div> 
+    	<!-- Student Details page -->
+       <div data-role="page" id="detailsservice">
+        	<div data-role="header">
+        	   	<a href="#home" class="ui-btn ui-icon-back ui-btn-icon-left" >Back</a>
+        	   		<h1>Student Details</h1>
+        	</div>
+        	
+         	<div role="main" class="ui-content">
+         		<div class="ui-field-contain" align="center">
+         			<form id="delete4">
+						<div id="studentdetailsservice" ></div>
+						<input type="hidden" id="studentInfoservice" name="studentInfoservice" value="">
+						<button onclick="delete4()"style="color:white;background-color:red;">Delete</button>
+						<br>
+						<br>
+						</form>
+         			
+       			</div>
+       		</div>
+
+    	</div> 
+    	<!-- Student Details page -->
+       <div data-role="page" id="detailslossandfound">
+        	<div data-role="header">
+        	   	<a href="#home" class="ui-btn ui-icon-back ui-btn-icon-left" >Back</a>
+        	   		<h1> Details</h1>
+        	</div>
+        	
+         	<div role="main" class="ui-content">
+         		<div class="ui-field-contain" align="center">
+         			<form id="delete5">
+						<div id="studentdetailslossandfound" ></div>
+						<input type="hidden" id="studentInfoloss" name="studentInfoloss" value="">
+						<button onclick="delete5()"style="color:white;background-color:red;">Delete</button>
+						<br>
+						<br>
+						</form>
+         			
+       			</div>
+       		</div>
+
+    	</div> 
+
+
+		
+
+<!-- option page -->
+		<div data-role="page" id="option">
+			<div data-role="header">
+			<a href="#home" data-role="button"  data-icon="back">BACK</a>
+				<h1>OPTION</h1>
+			</div>
+			
+			<div data-role="content">
+				<p>YOU ARE ADMIN</p><br><br><br>
+				<p>1) CHOOSE POST TO POST STATUS </p>
+				<a href="#page-postalumni" id="button-7" class="ui-btn ui-corner-all"style="color:white;background-color:DodgerBlue;">POST</a>
+			<br><br><br>
+			
+				
+				<p>2) CHOOSE APPROVE TO APPROVE THE POST THAT ARE NOT BEING SUBMITED AND YOU CAN DELETE THE POST</p>
+				<a href="#home_admin_edit" id="button-8" class="ui-btn ui-corner-all"style="color:white;background-color:DodgerBlue;">APPROVE</a>
+				<br><br><br><br>
+				<p>3) CHOOSE TO VIEW THE STATISTIC OF THE POST</p>
+				<a href="#postdetails" id="button-9" class="ui-btn ui-corner-all"style="color:white;background-color:DodgerBlue;">VIEW STATISTIC POST</a>
+				
+			</div>
+		</div>
+
+
+<!-- ////////////////////////////////////////////////////////////////////////////////// -->
+
+
+	<div data-role="page" id="home_admin_edit">
+			<div data-role="header">
+				<a href="#option" data-role="button"  data-icon="back">BACK</a>
+				<button onclick="myFunctionlogot()" class="ui-btn ui-icon-home ui-btn-icon-left" >LOG OUT</a></button>
+				<h1>IIUM (ADMIN)</h1>
+			</div>
+			<div data-role="content">
+				<div class="ui-body ui-body-a ui-corner-all">
+			<p style="text-align:center;"><img id="logo" alt="" src="img/logo.png" style="width:200px;height:200px;"/></p>
+		
+			<h6> <p style="text-align:center;"> YOU ARE ADMIN AND THIS IS THE POST THAT NEED YOUR ATTENTION (NOT APPROVE). YOU CAN DELETE THE POST OR YOU CAN APPROVE THE POST </p> </h6>
+		
+			<div data-role="tabs" id="tabs-1">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#aatab-1a" data-ajax="false" ><img id="image-1" alt="" src="img/alumni.png" width="35" height="40"/></a></li>
+						<li><a href="#aatab-1b" data-ajax="false"><img id="image-2" alt="" src="img/announcement.png" width="35" height="40"/></a></li>
+						<li><a href="#aatab-1c" data-ajax="false"><img id="image-3" alt="" src="img/lossandfound.png" width="35" height="40"/></a></li>
+						<li><a href="#aatab-1d" data-ajax="false"><img id="image-4" alt="" src="img/events.png" width="35" height="40"/></a></li>
+						<li><a href="#aatab-1e" data-ajax="false"><img id="image-5" alt="" src="img/service.png" width="35" height="40"/></a></li>
+					</ul>
+				</div>
+				
+				
+				<!--Page alumni-->
+				<div id="aatab-1a" class="ui-body-d ui-content">
+					<h4><p style="text-align:center;">ALUMNI</p></h4>
+				<!-- <ol data-role="listview" id="liststudentalumni" data-theme="a" ></ol>-->
+			<ul data-role="listview" id="aliststudentalumni" data-filter="true" data-filter-placeholder="Search Post..." data-inset="true">
+   
+</ul>
+				</div>
+				
+				
+				
+				<!--Page annoucement-->
+				<div id="aatab-1b" class="ui-body-d ui-content">
+					<h4><p style="text-align:center;">ANNOUCEMENT</p></h4>
+			<!-- 	<ol data-role="listview" id="liststudentannoucement" data-theme="a"></ol> -->
+				<ul data-role="listview" id="aliststudentannoucement" data-filter="true" data-filter-placeholder="Search Post..." data-inset="true"></ul>
+				</div>
+				
+				
+				
+				
+				
+				<!--Page lossfound-->
+				<div id="aatab-1c" class="ui-body-d ui-content">
+					<h4><p style="text-align:center;">LOSS AND FOUND</p></h4>
+					<!--   <ol data-role="listview" id="liststudentlossandfound" data-theme="a"></ol>-->
+				<ul data-role="listview" id="aliststudentlossandfound" data-filter="true" data-filter-placeholder="Search Post..." data-inset="true"></ul>
+				</div>
+				
+				
+				
+				
+				<!--Page event-->
+				<div id="aatab-1d" class="ui-body-d ui-content">
+					<h4><p style="text-align:center;">EVENT</p></h4>
+					<!--   <ol data-role="listview" id="liststudentevents" data-theme="a"></ol>--> 
+					<ul data-role="listview" id="aliststudentevents" data-filter="true" data-filter-placeholder="Search Post..." data-inset="true"></ul>
+				</div>
+				
+				
+				
+				
+				<!--Page service-->
+				<div id="aatab-1e" class="ui-body-d ui-content">
+					<h4><p style="text-align:center;">SERVICE</p></h4>
+					<!-- <ol data-role="listview" id="liststudentservices" data-theme="a"></ol> -->
+					<ul data-role="listview" id="aliststudentservices" data-filter="true" data-filter-placeholder="Search Post..." data-inset="true"></ul>
+				</div>
+		
+		
+		
+		
+		
+		
+		</div>
+		
+		
+		
+		
+		</div>
+			</div>
+		</div>
+		
+		
+		
+		
+		
+
+<!-- Student Details page adetailsalumni astudentdetailsalumni astudentInfo <button onclick="myFunctionapprove()">Approve</button>
+						<button onclick="myFunctiondelete()">Delete</button>-->
+       <div data-role="page" id="adetailsalumni">
+        	<div data-role="header">
+        	   	<a href="#home_admin_edit" class="ui-btn ui-icon-back ui-btn-icon-left" >Back</a>
+        	   		<h1>POST APPROVAL</h1>
+        	</div>
+        	
+         	<div role="main" class="ui-content">
+         		<div class="ui-field-contain" align="center">
+         			<form id="deleterecorda" >
+						<div id="astudentdetailsalumni" ></div>
+						<input type="hidden" id="astudentInfoID" name="astudentInfoID" value="">
+						
+						<div class="ui-grid-a">
+						<div class="ui-block-a"><button onclick="myFunctionapprovea()" style="color:white;background-color:green;">Approve</button></div>
+						<div class="ui-block-b"><button onclick="myFunctiondeletea()" style="color:white;background-color:red;">Delete</button></div>
+						</div>
+						<br>
+						<br>
+						</form>
+         			
+       			</div>
+       		</div>
+
+    	</div> 
+
+    	
+    	
+    	<!-- Student Details page -->
+       <div data-role="page" id="adetailsannoucement">
+        	<div data-role="header">
+        	   	<a href="#home_admin_edit" class="ui-btn ui-icon-back ui-btn-icon-left" >Back</a>
+        	   		<h1>Student Details</h1>
+        	</div>
+        	
+         	<div role="main" class="ui-content">
+         		<div class="ui-field-contain" align="center">
+         			<form id="deleterecordann" >
+						<div id="astudentdetailsannoucement" ></div>
+						<input type="hidden" id="astudentInfoannoucement" name="astudentInfoannoucement" value="">
+						
+						<div class="ui-grid-a">
+						<div class="ui-block-a"><button onclick="myFunctionapproveann()" style="color:white;background-color:green;">Approve</button></div>
+						<div class="ui-block-b"><button onclick="myFunctiondeleteann()"style="color:white;background-color:red;">Delete</button></div>
+						</div>
+						<br>
+						<br>
+						</form>
+         			
+       			</div>
+       		</div>
+
+    	</div> 
+    	<!-- Student Details page -->
+       <div data-role="page" id="adetailsevent">
+        	<div data-role="header">
+        	   	<a href="#home_admin_edit" class="ui-btn ui-icon-back ui-btn-icon-left" >Back</a>
+        	   		<h1> Details</h1>
+        	</div>
+        	
+         	<div role="main" class="ui-content">
+         		<div class="ui-field-contain" align="center">
+         			<form id="deleterecords" >
+						<div id="astudentdetailsevent" ></div>
+						<input type="hidden" id="astudentInfoevent" name="astudentInfoevent" value="">
+						
+						<div class="ui-grid-a">
+						<div class="ui-block-a"><button onclick="myFunctionapproves()"style="color:white;background-color:green;">Approve</button></div>
+						<div class="ui-block-b"><button onclick="myFunctiondeletes()"style="color:white;background-color:red;">Delete</button></div>
+						</div>
+						<br>
+						<br>
+						</form>
+         			
+       			</div>
+       		</div>
+
+    	</div> 
+    	<!-- Student Details page -->
+       <div data-role="page" id="adetailsservice">
+        	<div data-role="header">
+        	   	<a href="#home_admin_edit" class="ui-btn ui-icon-back ui-btn-icon-left" >Back</a>
+        	   		<h1>Student Details</h1>
+        	</div>
+        	
+         	<div role="main" class="ui-content">
+         		<div class="ui-field-contain" align="center">
+         			<form id="deleterecordser" >
+						<div id="astudentdetailsservice" ></div>
+						<input type="hidden" id="astudentInfoservice" name="astudentInfoservice" value="">
+						
+						<div class="ui-grid-a">
+						<div class="ui-block-a"><button onclick="myFunctionapproveser()"style="color:white;background-color:green;">Approve</button></div>
+						<div class="ui-block-b"><button onclick="myFunctiondeleteser()"style="color:white;background-color:red;">Delete</button></div>
+						</div>
+						<br>
+						<br>
+						</form>
+         			
+       			</div>
+       		</div>
+
+    	</div> 
+    	<!-- Student Details page -->
+       <div data-role="page" id="adetailslossandfound">
+        	<div data-role="header">
+        	   	<a href="#home_admin_edit" class="ui-btn ui-icon-back ui-btn-icon-left" >Back</a>
+        	   		<h1> Details</h1>
+        	</div>
+        	
+         	<div role="main" class="ui-content">
+         		<div class="ui-field-contain" align="center">
+         			<form id="deleterecordloss" >
+						<div id="astudentdetailslossandfound" ></div>
+						<input type="hidden" id="astudentInfoloss" name="astudentInfoloss" value="">
+						<div class="ui-grid-a">
+						<div class="ui-block-a"><button onclick="myFunctionapproveloss()"style="color:white;background-color:green;">Approve</button></div>
+						<div class="ui-block-b"><button onclick="myFunctiondeleteloss()"style="color:white;background-color:red;">Delete</button></div>
+						</div>
+						<br>
+						<br>
+						</form>
+         			
+       			</div>
+       		</div>
+
+    	</div> 
+
+
+<!-- STATISTIC PAGE -->
+		<div data-role="page" id="postdetails">
+			<div data-role="header">
+				<h1>POST DETAILS</h1>
+				<a href="#option" class="ui-btn ui-icon-back ui-btn-icon-left" >Back</a>
+			</div>
+			<div data-role="content">
+				<h3>ASSALAMUALAIKUM.</h3><br>
+				<h4>YOU as a ADMIN OF i-NOTICE BOARD CAN VIEW THE OVERAL POST THAT HAVE BEEN APPROVE ,PENDING STATUS AND TOTAL POST .</h4><br>
+				<h4>THIS IS THE STATISTIC OF THE POST</h4>
+				<div data-role="collapsible-set" id="collapsible-set-1" data-mini="true">
+					<div data-role="collapsible">
+						<h4>ALUMNI AND DISCUSSION</h4>
+						<p>POST DETAILS</p><br><br>
+						<h5>TOTAL POST APPROVE:</h5><div id="total_a_alumni"></div><br><br>
+						<h5>TOTAL POST PENDING:</h5><div id="total_p_alumni"></div><br><br>
+						<h5>TOTAL POST:</h5><div id="totalalumni"></div><br><br>
+						
+						
+						
+						</div>
+						
+						
+						
+						
+					<div data-role="collapsible">
+						<h4>ANNOUCEMENT</h4>
+						<p>POST DETAILS</p><br><br>
+						<h5>TOTAL POST APPROVE:</h5><div id="total_a_b"></div><br><br>
+						<h5>TOTAL POST PENDING:</h5><div id="total_p_b"></div><br><br>
+						<h5>TOTAL POST:</h5><div id="totalb"></div><br><br>
+						
+					</div>
+					<div data-role="collapsible">
+						<h4>LOSS AND FOUND</h4>
+						<p>POST DETAILS</p><br><br>
+						<h5>TOTAL POST APPROVE:</h5><div id="total_a_c"></div><br><br>
+						<h5>TOTAL POST PENDING:</h5><div id="total_p_c"></div><br><br>
+						<h5>TOTAL POST:</h5><div id="totalc"></div><br><br>
+						
+					</div>
+					<div data-role="collapsible">
+						<h4>EVENT</h4>
+						<p>POST DETAILS</p><br><br>
+						<h5>TOTAL POST APPROVE:</h5><div id="total_a_d"></div><br><br>
+						<h5>TOTAL POST PENDING:</h5><div id="total_p_d"></div><br><br>
+						<h5>TOTAL POST:</h5><div id="totald"></div><br><br>
+						
+					</div>
+					<div data-role="collapsible">
+						<h4>SERVICE</h4>
+						<p>POST DETAILS</p><br><br>
+						<h5>TOTAL POST APPROVE:</h5><div id="total_a_e"></div><br><br>
+						<h5>TOTAL POST PENDING:</h5><div id="total_p_e"></div><br><br>
+						<h5>TOTAL POST:</h5><div id="totale"></div><br><br>
+						
+					</div>
+				</div>
+			</div>
+			
+			
+			
+			
+			</div>
+
+
+
+
+
+
+<div data-role="page" id="logout">
+			<div data-role="header">
+				<h1>LOGOUT</h1>
+			</div>
+			<div data-role="content">
+				<p>Press LOG OUT to be riderect to home</p>
+			<button onclick="myFunctionlogout()"style="color:white;background-color:DodgerBlue;">LOGOUT</button></div>
+			
+		</div>
+
+<script type="text/javascript" src="js/index.js"></script>
+    </body>
+    
+   
+	
+		  <script type="text/javascript">
+       $(document).bind("mobileinit", function() {
+       $.support.cors = true;
+       $.mobile.allowCrossDomainPages = true;
+});
+</script>       
+		       
+		        
+
+    
+    
+    
+    
+    
+
+ 	
+</html>
+
+

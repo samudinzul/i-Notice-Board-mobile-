@@ -1,0 +1,24 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-datepicker": {
+      "PACKAGE_NAME": "WebService"
+    },
+    "cordova-plugin-document-viewer": {
+      "PACKAGE_NAME": "WebService"
+    },
+    "cordova-plugin-email": {
+      "PACKAGE_NAME": "WebService"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "WebService"
+    }
+  },
+  "dependent_plugins": {}
+}
